@@ -5,17 +5,34 @@ local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 
 local Window = Library:CreateWindow({
-    Title = 'Example menu',
+    Title = 'bdware.lua',
     Center = true,
     AutoShow = true,
     TabPadding = 8,
-    MenuFadeTime = 0.2
+    MenuFadeTime = 0.4
 })
 
 local Tabs = {
     Main = Window:AddTab('Main'),
     ['UI Settings'] = Window:AddTab('UI Settings'),
 }
+
+local MiscellaneousGroup = Tabs['UI Settings']:AddRightGroupbox('Miscellaneous')
+
+MiscellaneousGroup:AddButton("Unload", function()
+    Library:Unload()
+end)
+
+MiscellaneousGroup:AddLabel("Menu bind"):AddKeyPicker("MenuKeybind", {
+    Default = "End",
+    NoUI = true,
+    Text = "Menu keybind"
+})
+Library.ToggleKeybind = Options.MenuKeybind
+
+Library:OnUnload(function()
+    Library.Unloaded = true
+end)
 
 ThemeManager:SetLibrary(Library)
 SaveManager:SetLibrary(Library)
@@ -24,6 +41,5 @@ SaveManager:SetIgnoreIndexes({ 'MenuKeybind' })
 ThemeManager:SetFolder('MyScriptHub')
 SaveManager:SetFolder('MyScriptHub/specific-game')
 SaveManager:BuildConfigSection(Tabs['UI Settings'])
-local MenuGroup = Tabs['UI Settings']:AddRightGroupbox('Miscellaneous')
 ThemeManager:ApplyToTab(Tabs['UI Settings'])
 SaveManager:LoadAutoloadConfig()
