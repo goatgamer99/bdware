@@ -1,7 +1,7 @@
 -- New example script written by wally
 -- You can suggest changes with a pull request or something
 
-local repo = 'https://github.com/goatgamer99/library/main/'
+local repo = 'https://raw.githubusercontent.com/goatgamer99/library/refs/heads/main/'
 
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
 local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
