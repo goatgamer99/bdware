@@ -12,12 +12,14 @@ local Window = Library:CreateWindow({
     MenuFadeTime = 0.4
 })
 
-local Tabs = {
-    Main = Window:AddTab('Main'),
-    ['UI Settings'] = Window:AddTab('UI Settings'),
-}
+getgenv().LegitTab = Window:AddTab('Legit')
+getgenv().SemiLegitTab = Window:AddTab('Semi Legit')
+getgenv().RageTab = Window:AddTab('Rage')
+getgenv().VisualTab = Window:AddTab('Visuals')
+getgenv().ExploitsTab = Window:AddTab('Game Hacks')
+getgenv().MiscTab = Window:AddTab('Misc')
 
-local MiscellaneousGroup = Tabs['UI Settings']:AddRightGroupbox('Miscellaneous')
+local MiscellaneousGroup = getgenv().MiscTab:AddRightGroupbox('Miscellaneous')
 
 MiscellaneousGroup:AddButton("Unload", function()
     Library:Unload()
@@ -38,8 +40,8 @@ ThemeManager:SetLibrary(Library)
 SaveManager:SetLibrary(Library)
 SaveManager:IgnoreThemeSettings()
 SaveManager:SetIgnoreIndexes({ 'MenuKeybind' })
-ThemeManager:SetFolder('MyScriptHub')
-SaveManager:SetFolder('MyScriptHub/specific-game')
-SaveManager:BuildConfigSection(Tabs['UI Settings'])
-ThemeManager:ApplyToTab(Tabs['UI Settings'])
+ThemeManager:SetFolder('bdware')
+SaveManager:SetFolder('bdware/thabronx')
+SaveManager:BuildConfigSection(getgenv().MiscTab)
+ThemeManager:ApplyToTab(getgenv().MiscTab)
 SaveManager:LoadAutoloadConfig()
