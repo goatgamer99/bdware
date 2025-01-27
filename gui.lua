@@ -14,7 +14,10 @@ local Window = Library:CreateWindow({
 
 local Tabs = {
     Main = Window:AddTab('Main'),
+    ['UI Settings'] = Window:AddTab('UI Settings'),
 }
+
+local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('test')
 
 ThemeManager:SetLibrary(Library)
 SaveManager:SetLibrary(Library)
