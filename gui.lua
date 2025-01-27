@@ -17,8 +17,6 @@ local Tabs = {
     ['UI Settings'] = Window:AddTab('UI Settings'),
 }
 
-local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('test')
-
 ThemeManager:SetLibrary(Library)
 SaveManager:SetLibrary(Library)
 SaveManager:IgnoreThemeSettings()
@@ -26,6 +24,6 @@ SaveManager:SetIgnoreIndexes({ 'MenuKeybind' })
 ThemeManager:SetFolder('MyScriptHub')
 SaveManager:SetFolder('MyScriptHub/specific-game')
 SaveManager:BuildConfigSection(Tabs['UI Settings'])
+local MenuGroup = Tabs['UI Settings']:AddRightGroupbox('Miscellaneous')
 ThemeManager:ApplyToTab(Tabs['UI Settings'])
-
 SaveManager:LoadAutoloadConfig()
