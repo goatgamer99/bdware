@@ -14,7 +14,6 @@ local Window = Library:CreateWindow({
 
 local Tabs = {
     Main = Window:AddTab('Main'),
-    ['UI Settings'] = Window:AddTab('UI Settings'),
 }
 
 ThemeManager:SetLibrary(Library)
