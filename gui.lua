@@ -5,25 +5,12 @@ local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 
 local Window = Library:CreateWindow({
-    Title = '',
+    Title = 'snowfall.victim - Tha Bronx 2 / Universal',
     Center = true,
     AutoShow = true,
     TabPadding = 8,
     MenuFadeTime = 0.4
 })
-
-local function animateTitle()
-    local animatedText = "snowfall.victim"
-    local staticText = " - Tha Bronx 2 / Semi Universal"
-    for i = 1, #animatedText do
-        Window:SetTitle(animatedText:sub(1, i) .. staticText)
-        wait(1)
-    end
-end
-
-spawn(function()
-    animateTitle()
-end)
 
 getgenv().LegitTab = Window:AddTab('Legit')
 getgenv().SemiLegitTab = Window:AddTab('Semi Legit')
