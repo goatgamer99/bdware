@@ -5,7 +5,7 @@ local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 
 local Window = Library:CreateWindow({
-    Title = 'Johnathanfucksonnicreandoomfie.lua',
+    Title = 'snowfall.vic - Tha Bronx 2 / Universal',
     Center = true,
     AutoShow = true,
     TabPadding = 8,
